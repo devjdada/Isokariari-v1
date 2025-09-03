@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Storage;
 class Application extends Model
 {
     protected $fillable = [
-        'job_id',
+        'job_listings_id',
         'full_name',
         'email',
         'phone',
@@ -26,20 +26,20 @@ class Application extends Model
      */
     public function jobListing(): BelongsTo
     {
-        return $this->belongsTo(JobListing::class);
+        return $this->belongsTo(JobListing::class, 'job_listings_id');
     }
 
     protected function cv(): Attribute
     {
         return Attribute::make(
-            get: fn (?string $value) => $value ? Storage::url($value) : null,
+            get: fn (?string $value) => $value ? config('app.url') . Storage::url($value) : null,
         );
     }
 
     protected function letter(): Attribute
     {
         return Attribute::make(
-            get: fn (?string $value) => $value ? Storage::url($value) : null,
+            get: fn (?string $value) => $value ? config('app.url') . Storage::url($value) : null,
         );
     }
 }

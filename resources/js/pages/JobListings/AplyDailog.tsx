@@ -26,7 +26,7 @@ export default function ApplyDialog({ job, label }: ApplyDialogProps) {
 	const [open, setOpen] = useState(false);
 
 	const { data, setData, post, processing, reset, errors } = useForm({
-		job_id: job.id,
+		job_listings_id: job.id,
 		full_name: "",
 		email: "",
 		phone: "",
@@ -116,7 +116,9 @@ export default function ApplyDialog({ job, label }: ApplyDialogProps) {
 
 					<div className="grid grid-cols-2 gap-4">
 						<div>
-							<Label>CV/Resume (PDF)</Label>
+							<Label>
+								CV/Resume (PDF) <span className="text-red-500">*</span>
+							</Label>
 							<Input
 								type="file"
 								accept="application/pdf"
@@ -126,7 +128,9 @@ export default function ApplyDialog({ job, label }: ApplyDialogProps) {
 						</div>
 
 						<div>
-							<Label>Certifications (PDF)</Label>
+							<Label>
+								Certifications (PDF) <span className="text-red-500">*</span>
+							</Label>
 							<Input
 								type="file"
 								accept="application/pdf"
@@ -161,7 +165,10 @@ export default function ApplyDialog({ job, label }: ApplyDialogProps) {
 						</div>
 					</div>
 
-					<Button type="submit" disabled={processing}>
+					<Button
+						type="submit"
+						disabled={processing || !data.cv || !data.letter}
+					>
 						{processing ? "Submitting..." : "Submit Application"}
 					</Button>
 				</form>
