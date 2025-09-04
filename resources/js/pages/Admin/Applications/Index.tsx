@@ -57,35 +57,35 @@ export default function ApplicationsIndex({
 						{applications.length > 0 ? (
 							<div className="overflow-x-auto">
 								<table className="min-w-full divide-y divide-gray-200">
-									<thead className="bg-gray-50">
+									<thead className="">
 										<tr>
 											<th
 												scope="col"
-												className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+												className="px-6 py-3 text-left text-xs font-medium  uppercase tracking-wider"
 											>
 												Full Name
 											</th>
 											<th
 												scope="col"
-												className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+												className="px-6 py-3 text-left text-xs font-medium  uppercase tracking-wider"
 											>
 												Email
 											</th>
 											<th
 												scope="col"
-												className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+												className="px-6 py-3 text-left text-xs font-medium  uppercase tracking-wider"
 											>
 												Phone
 											</th>
 											<th
 												scope="col"
-												className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+												className="px-6 py-3 text-left text-xs font-medium  uppercase tracking-wider"
 											>
 												Job Applied For
 											</th>
 											<th
 												scope="col"
-												className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+												className="px-6 py-3 text-left text-xs font-medium  uppercase tracking-wider"
 											>
 												Applied On
 											</th>
@@ -94,24 +94,24 @@ export default function ApplicationsIndex({
 											</th>
 										</tr>
 									</thead>
-									<tbody className="bg-white divide-y divide-gray-200">
+									<tbody className=" divide-y ">
 										{applications.map((application) => (
 											<tr key={application.id}>
-												<td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+												<td className="px-6 py-4 whitespace-nowrap text-sm font-medium ">
 													{application.full_name}
 												</td>
-												<td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+												<td className="px-6 py-4 whitespace-nowrap text-sm ">
 													{application.email}
 												</td>
-												<td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+												<td className="px-6 py-4 whitespace-nowrap text-sm ">
 													{application.phone}
 												</td>
-												<td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+												<td className="px-6 py-4 whitespace-nowrap text-sm ">
 													{application.job_listing
 														? application.job_listing.title
 														: "Open Application"}
 												</td>
-												<td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+												<td className="px-6 py-4 whitespace-nowrap text-sm ">
 													{new Date(
 														application.created_at,
 													).toLocaleDateString()}

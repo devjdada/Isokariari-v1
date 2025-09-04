@@ -140,15 +140,15 @@ export default function Header() {
 								</DropdownMenuTrigger>
 								<DropdownMenuContent
 									align="center"
-									className="w-48 bg-oki-blue-light text-white "
+									className="w-48 bg-white text-black "
 								>
 									{aboutLinks.map((link) => (
 										<DropdownMenuItem
 											key={link.name}
-											className="hover:bg-oki-blue-dark hover:text-white"
+											className="hover:bg-oki-blue-light"
 											asChild
 										>
-											<Link href={link.path} className="flex w-full ">
+											<Link href={link.path} className="flex w-full hover:text-white">
 												{link.name}
 											</Link>
 										</DropdownMenuItem>

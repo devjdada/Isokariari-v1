@@ -2,24 +2,23 @@ import { Head, Link, useForm, usePage } from "@inertiajs/react";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import type React from "react";
 import { useEffect, useState } from "react";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import WebLayout from "@/layouts/WebLayout";
 import type { AboutProps } from "@/types/About";
+import "leaflet/dist/leaflet.css";
+import L from "leaflet";
 
-// // Fix for default marker icons in Leaflet
-// const DefaultIcon = L.icon({
-// 	iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
-// 	iconRetinaUrl:
-// 		"https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png",
-// 	shadowUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png",
-// 	iconSize: [25, 41],
-// 	iconAnchor: [12, 41],
-// 	popupAnchor: [1, -34],
-// 	shadowSize: [41, 41],
-// });
-// L.Marker.prototype.options.icon = DefaultIcon;
+// Fix for default marker icon not showing
+delete (L.Icon.Default.prototype as any)._getIconUrl;
+L.Icon.Default.mergeOptions({
+	iconRetinaUrl:
+		"https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png",
+	iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
+	shadowUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png",
+});
 
 interface BranchProps {
 	id: number;
@@ -248,7 +247,7 @@ const Contact = ({ about, branches, galleries }: ContactIndexProps) => {
 											id="message"
 											placeholder="Please describe your project or inquiry..."
 											required
-											className="w-full min-h-[150px]"
+											className="w-full  min-h-[350px]"
 											value={data.message}
 											onChange={(e) => setData("message", e.target.value)}
 										/>
@@ -356,7 +355,8 @@ const Contact = ({ about, branches, galleries }: ContactIndexProps) => {
 															className="text-gray-600"
 															dangerouslySetInnerHTML={{
 																__html: branch.address,
-															}}														                                                        />
+															}}
+														/>
 													</li>
 													<li className="flex">
 														<Phone
@@ -408,10 +408,15 @@ const Contact = ({ about, branches, galleries }: ContactIndexProps) => {
 						<h2 className="text-2xl font-bold mb-6 text-oki-gray-dark">
 							Our Location
 						</h2>
-						<div className="bg-oki-gray-light h-96 rounded-lg overflow-hidden">
-							{/* <MapContainer
-								center={about && about.latitude && about.longitude ? [parseFloat(about.latitude), parseFloat(about.longitude)] : [4.8156, 7.0498]} // Default coordinates (Nigeria center)
-								zoom={6}
+						<div className="bg-oki-gray-light h-[700px] rounded-lg overflow-hidden">
+							<MapContainer
+								center={
+									about && about.latitude && about.longitude
+										? [parseFloat(about.latitude), parseFloat(about.longitude)]
+										: [4.824782, 7.038825]
+								} // Default coordinates (Trans Amadi Industrial Layout)
+								zoom={15}
+								scrollWheelZoom={false}
 								style={{ height: "100%", width: "100%" }}
 							>
 								<TileLayer
@@ -438,23 +443,22 @@ const Contact = ({ about, branches, galleries }: ContactIndexProps) => {
 											branch.latitude &&
 											branch.longitude && (
 												<Marker
-														key={`branch-${index}`}
-														position={[
-															parseFloat(branch.latitude),
-															parseFloat(branch.longitude),
-														]}
+													key={`branch-${index}`}
+													position={[
+														parseFloat(branch.latitude),
+														parseFloat(branch.longitude),
+													]}
 												>
 													<Popup>
 														<strong>{branch.name}</strong>
 														<br />
 														{branch.address}
 													</Popup>
-
-													</Marker>
-												)
+												</Marker>
+											)
 									)
-						)}
-							</MapContainer> */}
+								}
+							</MapContainer>
 						</div>
 					</div>
 				</section>
