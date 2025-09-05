@@ -1,0 +1,1 @@
+import{j as s}from"./app-0H0V-A7H.js";import{A as t}from"./app-layout-DW5wgp_p.js";function m({user:x,header:a,children:r}){return s.jsxs(t,{children:[a&&s.jsx("header",{className:"bg-background shadow",children:s.jsx("div",{className:"mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8",children:a})}),s.jsx("main",{children:r})]})}export{m as A};
