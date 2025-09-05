@@ -45,6 +45,19 @@
         name="description"
         content="O.K. Isokariari Nigeria Limited (O.K.I) - A leading EPC company with over 51 years of engineering excellence in civil engineering and building projects." />
     <meta name="author" content="O.K. Isokariari Nigeria Limited" />
+    <meta
+        name="keywords"
+        content="O.K. Isokariari Nigeria Limited, O.K.I, Engineering, EPC, Civil Engineering, Building Projects, Construction, Infrastructure, Nigeria, Engineering Excellence" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="revised" content="Monday, June 10th, 2024, 3:00 pm" />
+    <meta name="category" content="Engineering, Construction, EPC" />
+    <meta name="coverage" content="Worldwide" />
+    <meta name="distribution" content="Global" />
+    <meta name="rating" content="General" />
+    <meta name="language" content="English" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="developer" content="Johnson Dada" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

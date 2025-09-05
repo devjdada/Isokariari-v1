@@ -18,8 +18,8 @@ const EquipmentSection = ({
 	const plugin = useRef(Autoplay({ delay: 2300, stopOnInteraction: false }));
 
 	return (
-		<section className="bg-oki-gray-light py-16">
-			<div className="container mx-auto px-4">
+		<section className="py-16 bg-oki-gray-light">
+			<div className="container px-4 mx-auto">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
@@ -29,7 +29,7 @@ const EquipmentSection = ({
 					<h2 className="mb-4 text-3xl font-bold text-oki-gray-dark">
 						OUR EQUIPMENT
 					</h2>
-					<p className="mx-auto max-w-3xl text-gray-600">
+					<p className="max-w-3xl mx-auto text-gray-600">
 						At O.K. Isokariari Nigeria Limited (O.K.I), we pride ourselves on
 						maintaining a modern, diverse, and reliable fleet of equipment to
 						handle a wide range of construction, earthmoving, and transportation
@@ -54,14 +54,14 @@ const EquipmentSection = ({
 									initial={{ opacity: 0, x: 150 }}
 									viewport={{ once: false }}
 									whileInView={{ opacity: 1, x: 0 }}
-									className="relative flex cursor-pointer items-center justify-center transition-shadow duration-500 hover:shadow-md"
+									className="relative flex items-center justify-center transition-shadow duration-500 cursor-pointer hover:shadow-md"
 								>
 									<img
 										src={eq.image}
 										alt={`${eq.name} - O.K. Isokariari Nigeria Limited Equipment`}
-										className="h-80 w-full rounded-lg shadow-xl"
+										className="w-full rounded-lg shadow-xl h-80"
 									/>
-									<div className="absolute right-0 bottom-0 left-0 bg-gradient-to-t from-black/70 to-transparent p-6 text-white">
+									<div className="absolute bottom-0 left-0 right-0 p-6 text-white bg-gradient-to-t from-black/70 to-transparent">
 										<p className="text-sm font-semibold">{eq.name}</p>
 									</div>
 								</motion.div>
@@ -73,7 +73,7 @@ const EquipmentSection = ({
 
 			<div className="mt-6 text-center">
 				<Link href="/equipment">
-					<Button className="bg-oki-blue-dark px-8 text-white hover:bg-oki-blue-light">
+					<Button className="px-8 text-white bg-oki-blue-dark hover:bg-oki-blue-light">
 						Explore All Equipment
 					</Button>
 				</Link>
