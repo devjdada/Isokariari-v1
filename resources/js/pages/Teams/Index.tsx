@@ -47,8 +47,10 @@ const TeamMemberCard = ({ member }: { member: TeamProps }) => {
 					<p className="mb-1 font-medium text-oki-blue-dark">{member.title}</p>
 
 					<div
-						className="mb-4 space-y-2 text-black "
-						dangerouslySetInnerHTML={{ _html: member.about }}
+						className="mb-4 text-gray-600"
+						dangerouslySetInnerHTML={{
+							__html: member?.about,
+						}}
 					/>
 
 					<div className="flex space-x-3">
