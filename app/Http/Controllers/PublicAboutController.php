@@ -17,7 +17,7 @@ class PublicAboutController extends Controller
     {
         $about = About::first();
 
-        $teams = Team::latest()->get()->map(function ($team) {
+        $teams = Team::orderBy('order', 'desc')->get()->map(function ($team) {
             $team->image = Storage::url($team->image);
             return $team;
         });
