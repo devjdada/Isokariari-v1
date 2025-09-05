@@ -32,9 +32,7 @@ class ApplicationController extends Controller
     public function show(Application $application)
     {
         $application->load('jobListing');
-        $application->cv = Storage::url($application->getRawOriginal('cv'));
-        $application->letter = Storage::url($application->getRawOriginal('letter'));
-
+      
         return Inertia::render('Admin/Applications/Show', [
             'application' => $application,
         ]);

@@ -77,7 +77,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
         Route::resource('hero-contents', App\Http\Controllers\Admin\HeroContentController::class);
         Route::resource('photos', App\Http\Controllers\Admin\PhotoController::class);
         Route::get('about', [App\Http\Controllers\Admin\AboutController::class, 'manage'])->name('about.manage');
-        Route::put('about', [App\Http\Controllers\Admin\AboutController::class, 'update'])->name('about.update');
+        Route::post('about', [App\Http\Controllers\Admin\AboutController::class, 'update'])->name('about.update');
         Route::resource('users', App\Http\Controllers\Admin\UserController::class)->except(['create', 'store']);
 
         // Admin has full CRUD for job-listings and applications

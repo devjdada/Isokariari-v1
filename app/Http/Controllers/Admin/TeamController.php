@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 
 class TeamController extends Controller
@@ -80,6 +81,11 @@ class TeamController extends Controller
         $team->update($validatedData);
 
         return redirect()->route('admin.teams.index')->with('success', 'Team updated successfully.');
+    }
+
+    public function show(Team $team)
+    {
+        return Inertia::render('Admin/Teams/Show', ['team' => $team]);
     }
 
     public function destroy(Team $team)

@@ -3,15 +3,11 @@ import Autoplay from "embla-carousel-autoplay";
 import { AnimatePresence, motion } from "framer-motion";
 import {
 	BookOpen,
-	Briefcase,
-	Building,
-	FileText,
 	Globe,
 	Grid,
 	Heart,
 	Target,
 	Trophy,
-	UserRound,
 	Users,
 } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
@@ -148,7 +144,14 @@ const About = ({
 
 	return (
 		<WebLayout>
-			<Head title="About" />
+
+            <Head>
+                <title>About Us - O.K. Isokariari Nigeria Limited (O.K.I)</title>
+                <meta name="description" content="Learn more about O.K. Isokariari Nigeria Limited (O.K.I), a leading engineering, procurement, and construction company. Discover our purpose, vision, mission, core values, and meet our top management team." />
+                <meta name="keywords" content="About O.K.I, O.K. Isokariari Nigeria Limited, Engineering Company, Procurement Services, Construction Company, Company History, Company Vision, Company Mission, Core Values, Top Management, Leadership Team" />
+                <meta name="author" content="O.K. Isokariari Nigeria Limited (O.K.I)" />
+                <meta property="og:title" content="About Us - O.K. Isokariari Nigeria Limited (O.K.I)" />
+            </Head>
 
 			<style>{`
 				.about-hero-bg {
@@ -164,18 +167,18 @@ const About = ({
 			`}</style>
 			<div className="">
 				{/* Hero Section */}
-				<section className="about-hero-bg text-white py-20 pt-32">
-					<div className="container mx-auto px-4">
+				<section className="py-20 pt-32 text-white about-hero-bg">
+					<div className="container px-4 mx-auto">
 						<motion.div
 							className="max-w-3xl"
 							initial="hidden"
 							animate="visible"
 							variants={fadeIn}
 						>
-							<h1 className="text-4xl md:text-5xl font-bold mb-6">About Us</h1>
+							<h1 className="mb-6 text-4xl font-bold md:text-5xl">About Us</h1>
 							{about?.about && (
 								<p
-									className="text-xl text-white/90 leading-relaxed mb-4"
+									className="mb-4 text-xl leading-relaxed text-white/90"
 									dangerouslySetInnerHTML={{ __html: about.about }}
 								/>
 							)}
@@ -185,19 +188,19 @@ const About = ({
 
 				{/* Purpose, Vision & Mission Section */}
 				<section className="py-16 bg-gradient-to-b from-oki-gray-light to-white">
-					<div className="container mx-auto px-4">
+					<div className="container px-4 mx-auto">
 						<motion.div
-							className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-4"
+							className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4"
 							variants={staggerContainer}
 							initial="hidden"
 							animate="visible"
 						>
 							<motion.div
-								className="bg-white rounded-lg shadow-lg p-8 border-t-4 border-oki-blue-dark"
+								className="p-8 bg-white border-t-4 rounded-lg shadow-lg border-oki-blue-dark"
 								variants={fadeIn}
 							>
 								<div className="flex items-center mb-6">
-									<Heart className="h-8 w-8 text-oki-blue-dark mr-3" />
+									<Heart className="w-8 h-8 mr-3 text-oki-blue-dark" />
 									<h2 className="text-2xl font-bold text-oki-gray-dark">
 										Our Purpose
 									</h2>
@@ -211,11 +214,11 @@ const About = ({
 							</motion.div>
 
 							<motion.div
-								className="bg-white rounded-lg shadow-lg p-8 border-t-4 border-oki-blue-light"
+								className="p-8 bg-white border-t-4 rounded-lg shadow-lg border-oki-blue-light"
 								variants={fadeIn}
 							>
 								<div className="flex items-center mb-6">
-									<Target className="h-8 w-8 text-oki-blue-light mr-3" />
+									<Target className="w-8 h-8 mr-3 text-oki-blue-light" />
 									<h2 className="text-2xl font-bold text-oki-gray-dark">
 										Our Vision
 									</h2>
@@ -229,11 +232,11 @@ const About = ({
 							</motion.div>
 
 							<motion.div
-								className="bg-white rounded-lg shadow-lg p-8 border-t-4 border-oki-red"
+								className="p-8 bg-white border-t-4 rounded-lg shadow-lg border-oki-red"
 								variants={fadeIn}
 							>
 								<div className="flex items-center mb-6">
-									<BookOpen className="h-8 w-8 text-oki-red mr-3" />
+									<BookOpen className="w-8 h-8 mr-3 text-oki-red" />
 									<h2 className="text-2xl font-bold text-oki-gray-dark">
 										Our Mission
 									</h2>
@@ -247,11 +250,11 @@ const About = ({
 							</motion.div>
 
 							<motion.div
-								className="bg-white rounded-lg shadow-lg p-8 border-t-4 border-violet-500"
+								className="p-8 bg-white border-t-4 rounded-lg shadow-lg border-violet-500"
 								variants={fadeIn}
 							>
 								<div className="flex items-center mb-6">
-									<Grid className="h-8 w-8 text-violet-500 mr-3" />
+									<Grid className="w-8 h-8 mr-3 text-violet-500" />
 									<h2 className="text-2xl font-bold text-oki-gray-dark">
 										Our Core Values
 									</h2>
@@ -269,26 +272,26 @@ const About = ({
 
 				{/* History Section */}
 				<section className="py-16">
-					<div className="container mx-auto px-4">
-						<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+					<div className="container px-4 mx-auto">
+						<div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
 							<motion.div
 								initial={{ opacity: 0, x: -20 }}
 								animate={{ opacity: 1, x: 0 }}
 								transition={{ duration: 0.7 }}
 							>
-								<h2 className="text-3xl font-bold mb-6 text-oki-gray-dark">
+								<h2 className="mb-6 text-3xl font-bold text-oki-gray-dark">
 									Our History
 								</h2>
 
 								{about?.history &&
 									splitParagraphs(about.history).map((paragraph, index) => (
-										<p key={`purpose-${index}`} className="text-gray-600 mb-5">
+										<p key={`purpose-${index}`} className="mb-5 text-gray-600">
 											{paragraph}
 										</p>
 									))}
 							</motion.div>
 							<section className=" bg-oki-gray-light">
-								<div className="container mx-auto px-4">
+								<div className="container px-4 mx-auto">
 									<Carousel
 										opts={{ align: "start", loop: true }}
 										plugins={[plugin.current]}
@@ -298,18 +301,18 @@ const About = ({
 											{galleries.map((eq) => (
 												<CarouselItem
 													key={`ClientCarousel-${eq.id}`}
-													className=" "
+													className=""
 												>
 													<motion.div
 														initial={{ opacity: 0, x: 150 }}
 														viewport={{ once: false }}
 														whileInView={{ opacity: 1, x: 0 }}
-														className="flex relative items-center justify-center hover:shadow-md transition-shadow duration-500 cursor-pointer"
+														className="relative flex items-center justify-center transition-shadow duration-500 cursor-pointer hover:shadow-md"
 													>
 														<img
 															src={eq.image}
 															alt={`${eq.gallery} logo`}
-															className="rounded-lg shadow-xl w-full h-80"
+															className="w-full rounded-lg shadow-xl h-80"
 														/>
 													</motion.div>
 												</CarouselItem>
@@ -326,17 +329,17 @@ const About = ({
 
 				{/* Meet Our Top Management Section */}
 				<section className="py-16 bg-oki-gray-light">
-					<div className="container mx-auto px-4">
+					<div className="container px-4 mx-auto">
 						<motion.div
 							initial={{ opacity: 0, y: 20 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.5 }}
-							className="text-center mb-12"
+							className="mb-12 text-center"
 						>
-							<h2 className="text-3xl font-bold mb-4 text-oki-gray-dark">
+							<h2 className="mb-4 text-3xl font-bold text-oki-gray-dark">
 								MEET OUR TOP MANAGEMENT
 							</h2>
-							<p className="text-gray-600 max-w-3xl mx-auto">
+							<p className="max-w-3xl mx-auto text-gray-600">
 								At O.K. Isokariari Nigeria Limited (O.K.I), our success is
 								driven by the expertise and leadership of our top management
 								team. We are proud to introduce the individuals who spearhead
@@ -349,36 +352,36 @@ const About = ({
 							variants={staggerContainer}
 							initial="hidden"
 							animate="visible"
-							className="grid grid-cols-2 md:grid-cols-4  gap-8"
+							className="grid grid-cols-2 gap-8 md:grid-cols-4"
 						>
-							{teams.map((member, index) => (
+							{teams.map((member) => (
 								<motion.div
-									key={index}
+									key={`team-member-${member.id}`}
 									variants={fadeIn}
 									viewport={{ once: false }}
-									className="bg-white relative rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow group"
+									className="relative overflow-hidden transition-shadow bg-white rounded-lg shadow-lg hover:shadow-xl group"
 								>
 									{/* Image container with scaling effect on hover */}
-									<div className="h-86 overflow-hidden relative">
+									<div className="relative overflow-hidden h-86">
 										<img
 											src={member.image}
 											alt={member.name}
-											className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+											className="object-cover object-center w-full h-full transition-transform duration-500 group-hover:scale-105"
 										/>
 									</div>
 
 									{/* Info overlay with smooth slide-up animation */}
-									<div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-										<div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+									<div className="absolute inset-0 flex flex-col justify-end p-6 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent group-hover:opacity-100">
+										<div className="transition-transform duration-300 transform translate-y-8 group-hover:translate-y-0">
 											<h3 className="text-2xl font-bold text-white">
 												{member.name}
 											</h3>
-											<p className="text-rose-500 font-medium text-lg mb-4">
+											<p className="mb-4 text-lg font-medium text-rose-500">
 												{member.title}
 											</p>
 											<Button
 												variant="outline"
-												className="text-rose-500 border-white hover:text-white hover:bg-white/20 mt-2"
+												className="mt-2 border-white text-rose-500 hover:text-white hover:bg-white/20"
 												onClick={(e) => {
 													e.stopPropagation();
 													setSelectedMember(member);
@@ -400,7 +403,7 @@ const About = ({
 					{isDialogOpen && (
 						<Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
 							<motion.div
-								className="fixed inset-0 bg-white  z-50"
+								className="fixed inset-0 z-50 bg-white"
 								variants={overlayVariants}
 								initial="hidden"
 								animate="visible"
@@ -415,7 +418,7 @@ const About = ({
 											exit="exit"
 										>
 											<motion.div
-												className="grid sm:grid-cols-2 grid-cols-1 gap-4 py-4"
+												className="grid grid-cols-1 gap-4 py-4 sm:grid-cols-2"
 												initial={{ opacity: 0 }}
 												animate={{ opacity: 1 }}
 												transition={{ delay: 0.2 }}
@@ -429,12 +432,12 @@ const About = ({
 													<img
 														src={selectedMember?.image}
 														alt={selectedMember?.name}
-														className=" object-cover border-1 border-oki-blue-light shadow-lg"
+														className="object-cover shadow-lg border-1 border-oki-blue-light"
 													/>
 												</motion.div>
 
 												<motion.div
-													className="text-gray-700  justify-center"
+													className="justify-center text-gray-700"
 													initial={{ y: 10, opacity: 0 }}
 													animate={{ y: 0, opacity: 1 }}
 													transition={{ delay: 0.3 }}
@@ -442,20 +445,16 @@ const About = ({
 													<h3 className="text-2xl font-bold ">
 														{selectedMember?.name}
 													</h3>
-													<p className="text-oki-blue-light font-medium text-lg mb-4">
+													<p className="mb-4 text-lg font-medium text-oki-blue-light">
 														{selectedMember?.title}
 													</p>
-													{selectedMember.about &&
-														splitParagraphs(selectedMember.about).map(
-															(paragraph, index) => (
-																<p
-																	key={`about-me-${index}`}
-																	className=" leading-relaxed mb-4"
-																>
-																	{paragraph}
-																</p>
-															),
-														)}
+
+													<div
+														className="mb-4 text-gray-600"
+														dangerouslySetInnerHTML={{
+															__html: selectedMember?.about,
+														}}
+													/>
 												</motion.div>
 											</motion.div>
 										</motion.div>
@@ -467,9 +466,9 @@ const About = ({
 				</AnimatePresence>
 				{/* Core Values Section */}
 				<section className="py-16">
-					<div className="container mx-auto px-4">
+					<div className="container px-4 mx-auto">
 						<motion.h2
-							className="text-3xl font-bold mb-12 text-center text-oki-gray-dark"
+							className="mb-12 text-3xl font-bold text-center text-oki-gray-dark"
 							initial={{ opacity: 0, y: 20 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.5 }}
@@ -477,49 +476,49 @@ const About = ({
 							We Stands for
 						</motion.h2>
 						<motion.div
-							className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+							className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4"
 							variants={staggerContainer}
 							initial="hidden"
 							animate="visible"
 						>
 							<motion.div
-								className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow border-b-4 border-oki-blue-dark"
+								className="p-6 transition-shadow bg-white border-b-4 rounded-lg shadow-md hover:shadow-lg border-oki-blue-dark"
 								variants={fadeIn}
 							>
 								<div className="flex items-center justify-center mb-4">
-									<Trophy className="text-oki-blue-dark h-12 w-12" />
+									<Trophy className="w-12 h-12 text-oki-blue-dark" />
 								</div>
-								<h3 className="text-xl font-semibold mb-3 text-oki-gray-dark text-center">
+								<h3 className="mb-3 text-xl font-semibold text-center text-oki-gray-dark">
 									Excellence
 								</h3>
-								<p className="text-gray-600 text-center">
+								<p className="text-center text-gray-600">
 									We strive for excellence in every aspect of our work, from
 									project planning to execution and delivery.
 								</p>
 							</motion.div>
 							<motion.div
-								className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow border-b-4 border-oki-blue-dark"
+								className="p-6 transition-shadow bg-white border-b-4 rounded-lg shadow-md hover:shadow-lg border-oki-blue-dark"
 								variants={fadeIn}
 							>
 								<div className="flex items-center justify-center mb-4">
-									<Users className="text-oki-blue-dark h-12 w-12" />
+									<Users className="w-12 h-12 text-oki-blue-dark" />
 								</div>
-								<h3 className="text-xl font-semibold mb-3 text-oki-gray-dark text-center">
+								<h3 className="mb-3 text-xl font-semibold text-center text-oki-gray-dark">
 									Integrity
 								</h3>
-								<p className="text-gray-600 text-center">
+								<p className="text-center text-gray-600">
 									We operate with honesty, transparency, and ethical conduct in
 									all our business dealings.
 								</p>
 							</motion.div>
 							<motion.div
-								className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow border-b-4 border-oki-blue-dark"
+								className="p-6 transition-shadow bg-white border-b-4 rounded-lg shadow-md hover:shadow-lg border-oki-blue-dark"
 								variants={fadeIn}
 							>
 								<div className="flex items-center justify-center mb-4">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
-										className="h-12 w-12 text-oki-blue-dark"
+										className="w-12 h-12 text-oki-blue-dark"
 										viewBox="0 0 24 24"
 										fill="none"
 										stroke="currentColor"
@@ -532,25 +531,25 @@ const About = ({
 										<line x1="12" y1="16" x2="12.01" y2="16" />
 									</svg>
 								</div>
-								<h3 className="text-xl font-semibold mb-3 text-oki-gray-dark text-center">
+								<h3 className="mb-3 text-xl font-semibold text-center text-oki-gray-dark">
 									Innovation
 								</h3>
-								<p className="text-gray-600 text-center">
+								<p className="text-center text-gray-600">
 									We embrace innovative approaches and technologies to deliver
 									superior results.
 								</p>
 							</motion.div>
 							<motion.div
-								className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow border-b-4 border-oki-blue-dark"
+								className="p-6 transition-shadow bg-white border-b-4 rounded-lg shadow-md hover:shadow-lg border-oki-blue-dark"
 								variants={fadeIn}
 							>
 								<div className="flex items-center justify-center mb-4">
-									<Globe className="text-oki-blue-dark h-12 w-12" />
+									<Globe className="w-12 h-12 text-oki-blue-dark" />
 								</div>
-								<h3 className="text-xl font-semibold mb-3 text-oki-gray-dark text-center">
+								<h3 className="mb-3 text-xl font-semibold text-center text-oki-gray-dark">
 									Sustainability
 								</h3>
-								<p className="text-gray-600 text-center">
+								<p className="text-center text-gray-600">
 									We are committed to environmentally responsible practices and
 									sustainable development.
 								</p>
@@ -563,32 +562,32 @@ const About = ({
 				<ClientsCarousel clients={clients} />
 
 				{/* CTA Section */}
-				<section className="py-16 bg-gradient-to-r from-oki-blue-dark to-oki-blue-light text-white">
-					<div className="container mx-auto px-4 text-center">
+				<section className="py-16 text-white bg-gradient-to-r from-oki-blue-dark to-oki-blue-light">
+					<div className="container px-4 mx-auto text-center">
 						<motion.div
 							initial={{ opacity: 0, y: 30 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.7 }}
 							viewport={{ once: false }}
 						>
-							<h2 className="text-3xl font-bold mb-6">
+							<h2 className="mb-6 text-3xl font-bold">
 								Ready to Work With Us?
 							</h2>
-							<p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
+							<p className="max-w-2xl mx-auto mb-8 text-lg text-white/80">
 								Whether you're looking for a construction partner, career
 								opportunities, or more information about our services, we'd love
 								to hear from you.
 							</p>
-							<div className="flex flex-col sm:flex-row justify-center gap-4">
+							<div className="flex flex-col justify-center gap-4 sm:flex-row">
 								<Link href="/contact">
-									<Button className="bg-white text-oki-blue-dark hover:bg-white/90 px-8 py-6">
+									<Button className="px-8 py-6 bg-white text-oki-blue-dark hover:bg-white/90">
 										Contact Us
 									</Button>
 								</Link>
 								<Link href="/team">
 									<Button
 										variant="outline"
-										className="bg-oki-red text-white hover:bg-white px-8 py-6"
+										className="px-8 py-6 text-white bg-oki-red hover:bg-white"
 									>
 										Meet Our Team
 									</Button>
