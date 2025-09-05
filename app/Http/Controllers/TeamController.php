@@ -12,7 +12,7 @@ class TeamController extends Controller
 {
     public function index()
     {
-        $teams = Team::latest()->get()->map(function ($team) {
+        $teams = Team::orderBy("order", "asc")->get()->map(function ($team) {
             $team->image = Storage::url($team->image);
             return $team;
         });

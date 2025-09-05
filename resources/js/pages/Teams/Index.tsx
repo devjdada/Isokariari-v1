@@ -31,27 +31,25 @@ const splitParagraphs = (text: string) => {
 
 const TeamMemberCard = ({ member }: { member: TeamProps }) => {
 	return (
-		<div className="bg-white items-center grid grid-cols-2 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-			<div className="relative h-120 overflow-hidden">
+		<div className="grid items-center grid-cols-2 overflow-hidden transition-shadow bg-white rounded-lg shadow-md hover:shadow-lg">
+			<div className="relative overflow-hidden h-120">
 				<img
 					src={member.image}
 					alt={member.name}
-					className="w-full h-full object-cover object-center"
+					className="object-cover object-center w-full h-full"
 				/>
 			</div>
 			<ScrollArea className="h-[500px]">
 				<div className="p-6">
-					<h3 className="text-xl font-semibold mb-1 text-oki-gray-dark">
+					<h3 className="mb-1 text-xl font-semibold text-oki-gray-dark">
 						{member.name}
 					</h3>
-					<p className="text-oki-blue-dark font-medium mb-1">{member.title}</p>
+					<p className="mb-1 font-medium text-oki-blue-dark">{member.title}</p>
 
-					{member.about &&
-						splitParagraphs(member.about).map((paragraph, index) => (
-							<p key={`about-me-${index}`} className="text-gray-600 mb-6">
-								{paragraph}
-							</p>
-						))}
+					<div
+						className="mb-4 space-y-2 text-black "
+						dangerouslySetInnerHTML={{ _html: member.about }}
+					/>
 
 					<div className="flex space-x-3">
 						{member.linkedin && (
@@ -59,7 +57,7 @@ const TeamMemberCard = ({ member }: { member: TeamProps }) => {
 								href={member.linkedin}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="text-gray-600 hover:text-oki-blue-dark transition-colors"
+								className="text-gray-600 transition-colors hover:text-oki-blue-dark"
 							>
 								<Linkedin size={20} />
 							</a>
@@ -69,7 +67,7 @@ const TeamMemberCard = ({ member }: { member: TeamProps }) => {
 								href={member.twitter}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="text-gray-600 hover:text-oki-blue-dark transition-colors"
+								className="text-gray-600 transition-colors hover:text-oki-blue-dark"
 							>
 								<Twitter size={20} />
 							</a>
@@ -77,7 +75,7 @@ const TeamMemberCard = ({ member }: { member: TeamProps }) => {
 						{member.email && (
 							<a
 								href={`mailto:${member.email}`}
-								className="text-gray-600 hover:text-oki-blue-dark transition-colors"
+								className="text-gray-600 transition-colors hover:text-oki-blue-dark"
 							>
 								<Mail size={20} />
 							</a>
@@ -139,10 +137,10 @@ const TeamPage = ({ teams, galleries }: TeamsIndexProps) => {
 				}
 			`}</style>
 			<div>
-				<section className="team-hero-bg text-white py-20 pt-32">
-					<div className="container mx-auto px-4">
+				<section className="py-20 pt-32 text-white team-hero-bg">
+					<div className="container px-4 mx-auto">
 						<div className="max-w-3xl">
-							<h1 className="text-4xl md:text-5xl font-bold mb-6">Our Team</h1>
+							<h1 className="mb-6 text-4xl font-bold md:text-5xl">Our Team</h1>
 							<p className="text-xl text-white/90">
 								Meet the dedicated professionals who drive O.K. Isokariari
 								Nigeria Limited forward with expertise, innovation, and
@@ -153,11 +151,11 @@ const TeamPage = ({ teams, galleries }: TeamsIndexProps) => {
 				</section>
 
 				<section className="py-16">
-					<div className="container mx-auto px-4">
-						<h2 className="text-3xl font-bold mb-12 text-center text-oki-gray-dark">
+					<div className="container px-4 mx-auto">
+						<h2 className="mb-12 text-3xl font-bold text-center text-oki-gray-dark">
 							Executive Leadership
 						</h2>
-						<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+						<div className="grid grid-cols-1 gap-8 md:grid-cols-2">
 							{teams.map((member) => (
 								<TeamMemberCard key={member.id} member={member} />
 							))}
@@ -165,17 +163,17 @@ const TeamPage = ({ teams, galleries }: TeamsIndexProps) => {
 					</div>
 				</section>
 
-				<section className="py-16 bg-oki-blue-dark text-white">
-					<div className="container mx-auto px-4 text-center">
-						<h2 className="text-3xl font-bold mb-6">Join Our Team</h2>
-						<p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
+				<section className="py-16 text-white bg-oki-blue-dark">
+					<div className="container px-4 mx-auto text-center">
+						<h2 className="mb-6 text-3xl font-bold">Join Our Team</h2>
+						<p className="max-w-2xl mx-auto mb-8 text-lg text-white/80">
 							We're always looking for talented professionals to join our
 							growing team. Explore our current opportunities and become part of
 							Nigeria's engineering excellence.
 						</p>
 						<Link
 							href="/careers"
-							className="inline-block bg-white text-oki-blue-dark hover:bg-white/90 font-semibold px-8 py-4 rounded-md transition-colors"
+							className="inline-block px-8 py-4 font-semibold transition-colors bg-white rounded-md text-oki-blue-dark hover:bg-white/90"
 						>
 							View Open Positions
 						</Link>
