@@ -1,0 +1,1 @@
+import{j as o}from"./app-Ci7JPyDS.js";import{A as r}from"./auth-layout-DITdcIrA.js";function e({children:t}){return o.jsx(r,{title:"Welcome",description:"Sign in to your account",children:t})}export{e as G};
